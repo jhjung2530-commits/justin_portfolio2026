@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정재훈 · 부장 · 상상누리 PRO</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.65;
+      max-width: 480px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    /* ── 헤더 ── */
+    header {
+      background: #1F3864;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    /* 프로필 사진 자리 (실제 사진으로 교체 시 img 태그로 대체) */
+    .profile-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      background: #fff;
+      margin: 0 auto 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* 실제 사진 추가 시: <img class="profile-img" src="profile.jpg" alt="정재훈"> */
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .identity {
+      font-size: clamp(1rem, 4.8vw, 1.5rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── 자기소개 ── */
+    .intro {
+      padding: 1.75rem 1.5rem;
+      border-bottom: 1px solid #333;
+    }
+
+    .intro p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: #333;
+    }
+
+    /* ── 경력 카드 ── */
+    .career-section {
+      padding: 1.5rem;
+      border-bottom: 1px solid #333;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #1F3864;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #1F3864;
+    }
+
+    .career-card {
+      border-left: 4px solid #1F3864;
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.75rem;
+      background: #fff;
+    }
+
+    .career-card:last-child { margin-bottom: 0; }
+
+    .career-period {
+      font-size: 0.75rem;
+      color: #1F3864;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .career-company {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .career-role {
+      font-size: 0.88rem;
+      color: #333;
+      margin-top: 0.15rem;
+    }
+
+    /* ── 연락처 버튼 ── */
+    .contact-section {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      font-family: inherit;
+      border: none;
+    }
+
+    .btn-email {
+      background: #1F3864;
+      color: #fff;
+    }
+
+    .btn-phone {
+      background: #fff;
+      color: #1F3864;
+      border: 2px solid #1F3864;
+    }
+
+    /* ── 토스트 알림 ── */
+    .toast {
+      display: none;
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      z-index: 100;
+    }
+
+    .toast.show { display: block; }
+
+    /* ── 푸터 ── */
+    footer {
+      text-align: center;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.78rem;
+      color: #333;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="profile-avatar">
+      <!-- 사진 파일(profile.jpg)을 같은 폴더에 놓으면 아래 주석을 해제하세요 -->
+      <!-- <img class="profile-img" src="profile.jpg" alt="정재훈 프로필 사진"> -->
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="28" cy="20" r="12" fill="#1F3864"/>
+        <ellipse cx="28" cy="50" rx="20" ry="13" fill="#1F3864"/>
+      </svg>
+    </div>
+    <div class="identity">정재훈 · 부장 · 상상누리 PRO</div>
+  </header>
+
+  <section class="intro">
+    <p>
+      동서식품에서 35년간 구매 및 경영지원 업무를 담당하며<br>
+      기업 운영의 핵심 실무를 이끌어 온 비즈니스 전문가입니다.<br>
+      1990년 입사 이후 구매·경영지원 두 분야를 두루 경험하며<br>
+      현장과 전략 양면에서 탄탄한 역량을 키워왔습니다.<br>
+      현재는 상상누리 PRO에서 새로운 도전을 이어가고 있습니다.
+    </p>
+  </section>
+
+  <section class="career-section">
+    <div class="section-label">경력</div>
+
+    <div class="career-card">
+      <div class="career-period">2026 ~ 현재</div>
+      <div class="career-company">상상누리 PRO</div>
+      <div class="career-role">신규 비즈니스 개발 및 네트워킹</div>
+    </div>
+
+    <div class="career-card">
+      <div class="career-period">1996 ~ 2025</div>
+      <div class="career-company">동서식품</div>
+      <div class="career-role">경영지원부문 부장 · 29년 근무</div>
+    </div>
+
+    <div class="career-card">
+      <div class="career-period">1990 ~ 1995</div>
+      <div class="career-company">동서식품</div>
+      <div class="career-role">구매부문 근무 · 입사 초기 5년</div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <a class="btn btn-email" href="mailto:jhjung2530@gmail.com" onclick="copyEmail()">이메일 보내기</a>
+    <button class="btn btn-phone" onclick="copyPhone()">전화 걸기</button>
+  </section>
+
+  <div id="toast" class="toast"></div>
+
+  <footer>
+    jhjung2530@gmail.com &nbsp;·&nbsp; 010-6641-2143
+  </footer>
+
+  <script>
+    function copyEmail() {
+      copyToClipboard('jhjung2530@gmail.com', '이메일 주소가 복사되었습니다');
+    }
+
+    function copyPhone() {
+      copyToClipboard('010-6641-2143', '010-6641-2143 이 복사되었습니다');
+    }
+
+    function copyToClipboard(text, message) {
+      function done() { showToast(message); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(text); done(); });
+      } else {
+        fallback(text);
+        done();
+      }
+    }
+
+    function fallback(text) {
+      var el = document.createElement('textarea');
+      el.value = text;
+      el.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(el);
+      el.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(el);
+    }
+
+    function showToast(message) {
+      var t = document.getElementById('toast');
+      t.textContent = message;
+      t.classList.add('show');
+      setTimeout(function () { t.classList.remove('show'); }, 2500);
+    }
+  </script>
+
+</body>
+</html>
