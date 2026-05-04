@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>정재훈 · 부장 · 상상누리 PRO</title>
+  <title>정재훈</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-      background: #fff;
+      background: rgba(31, 56, 100, 0.04);
       color: #333;
       line-height: 1.65;
       max-width: 480px;
@@ -19,23 +19,23 @@
 
     /* ── 헤더 ── */
     header {
-      background: #1F3864;
-      padding: 2.5rem 1.5rem 2rem;
+      background: linear-gradient(160deg, #1F3864 60%, rgba(31,56,100,0.82) 100%);
+      padding: 3rem 1.5rem 2.5rem;
       text-align: center;
     }
 
-    /* 프로필 사진 자리 (실제 사진으로 교체 시 img 태그로 대체) */
     .profile-avatar {
-      width: 96px;
-      height: 96px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 3px solid #fff;
-      background: #fff;
+      border: 3px solid rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.15);
       margin: 0 auto 1.25rem;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
     }
 
     /* 실제 사진 추가 시: <img class="profile-img" src="profile.jpg" alt="정재훈"> */
@@ -46,97 +46,112 @@
     }
 
     .identity {
-      font-size: clamp(1rem, 4.8vw, 1.5rem);
-      font-weight: 700;
+      font-size: clamp(1.4rem, 6vw, 1.9rem);
+      font-weight: 800;
       color: #fff;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      letter-spacing: 0.06em;
     }
 
     /* ── 자기소개 ── */
     .intro {
-      padding: 1.75rem 1.5rem;
-      border-bottom: 1px solid #333;
+      margin: 1.25rem 1.25rem 0;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 2px 12px rgba(31,56,100,0.08);
     }
 
     .intro p {
-      font-size: 0.95rem;
-      line-height: 1.85;
+      font-size: 0.93rem;
+      line-height: 1.9;
       color: #333;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      margin-bottom: 0.55rem;
     }
+    .intro p:last-child { margin-bottom: 0; }
 
-    /* ── 경력 카드 ── */
+    /* ── 경력 섹션 ── */
     .career-section {
-      padding: 1.5rem;
-      border-bottom: 1px solid #333;
+      margin: 1.25rem 1.25rem 0;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.4rem;
+      box-shadow: 0 2px 12px rgba(31,56,100,0.08);
     }
 
     .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
       color: #1F3864;
       text-transform: uppercase;
-      margin-bottom: 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 2px solid #1F3864;
+      margin-bottom: 1.1rem;
     }
 
     .career-card {
-      border-left: 4px solid #1F3864;
-      padding: 0.8rem 1rem;
-      margin-bottom: 0.75rem;
-      background: #fff;
+      position: relative;
+      padding: 1rem 1rem 1rem 1.1rem;
+      margin-bottom: 0.6rem;
+      border-radius: 10px;
+      background: rgba(31,56,100,0.04);
+      border-left: 3px solid #1F3864;
     }
 
     .career-card:last-child { margin-bottom: 0; }
 
     .career-period {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: #1F3864;
       font-weight: 700;
-      margin-bottom: 0.2rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
     }
 
     .career-company {
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 800;
       color: #333;
     }
 
     .career-role {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: #333;
-      margin-top: 0.15rem;
+      opacity: 0.75;
+      margin-top: 0.2rem;
+      line-height: 1.6;
     }
 
     /* ── 연락처 버튼 ── */
     .contact-section {
-      padding: 1.5rem;
+      margin: 1.25rem 1.25rem 0;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.7rem;
     }
 
     .btn {
       display: block;
       width: 100%;
-      padding: 0.9rem 1rem;
-      border-radius: 6px;
-      font-size: 1rem;
+      padding: 1rem 1rem;
+      border-radius: 50px;
+      font-size: 0.97rem;
       font-weight: 700;
       cursor: pointer;
       text-align: center;
       text-decoration: none;
       font-family: inherit;
       border: none;
+      letter-spacing: 0.04em;
+      transition: opacity 0.15s, transform 0.15s;
     }
+
+    .btn:active { opacity: 0.82; transform: scale(0.98); }
 
     .btn-email {
       background: #1F3864;
       color: #fff;
+      box-shadow: 0 4px 14px rgba(31,56,100,0.28);
     }
 
     .btn-phone {
@@ -154,11 +169,12 @@
       transform: translateX(-50%);
       background: #333;
       color: #fff;
-      padding: 0.6rem 1.4rem;
+      padding: 0.65rem 1.5rem;
       border-radius: 99px;
       font-size: 0.85rem;
       white-space: nowrap;
       z-index: 100;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     }
 
     .toast.show { display: block; }
@@ -166,10 +182,12 @@
     /* ── 푸터 ── */
     footer {
       text-align: center;
-      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 1.25rem 2rem;
+      padding: 1.1rem 1rem;
       font-size: 0.78rem;
       color: #333;
-      border-top: 1px solid #333;
+      opacity: 0.6;
+      letter-spacing: 0.03em;
     }
   </style>
 </head>
@@ -184,17 +202,13 @@
         <ellipse cx="28" cy="50" rx="20" ry="13" fill="#1F3864"/>
       </svg>
     </div>
-    <div class="identity">정재훈 · 부장 · 상상누리 PRO</div>
+    <div class="identity">정재훈</div>
   </header>
 
   <section class="intro">
-    <p>
-      동서식품에서 35년간 구매 및 경영지원 업무를 담당하며<br>
-      기업 운영의 핵심 실무를 이끌어 온 비즈니스 전문가입니다.<br>
-      1990년 입사 이후 구매·경영지원 두 분야를 두루 경험하며<br>
-      현장과 전략 양면에서 탄탄한 역량을 키워왔습니다.<br>
-      현재는 상상누리 PRO에서 새로운 도전을 이어가고 있습니다.
-    </p>
+    <p>동서식품에서 35년간 구매 및 경영지원 업무를 담당하며 기업 운영의 핵심 실무를 이끌어 온 비즈니스 전문가입니다.</p>
+    <p>1990년 입사 이후 구매·경영지원 두 분야를 두루 경험하며 현장과 전략 양면에서 탄탄한 역량을 키워왔습니다.</p>
+    <p>현재는 상상누리에서 PRO로서 새로운 도전을 이어가고 있습니다.</p>
   </section>
 
   <section class="career-section">
@@ -202,20 +216,20 @@
 
     <div class="career-card">
       <div class="career-period">2026 ~ 현재</div>
-      <div class="career-company">상상누리 PRO</div>
-      <div class="career-role">신규 비즈니스 개발 및 네트워킹</div>
+      <div class="career-company">상상누리</div>
+      <div class="career-role">컨설턴트</div>
     </div>
 
     <div class="career-card">
       <div class="career-period">1996 ~ 2025</div>
-      <div class="career-company">동서식품</div>
-      <div class="career-role">경영지원부문 부장 · 29년 근무</div>
+      <div class="career-company">주식회사 동서</div>
+      <div class="career-role">경영지원부문 부서장<br>재무·기획·법무·감사 업무 총괄</div>
     </div>
 
     <div class="career-card">
       <div class="career-period">1990 ~ 1995</div>
       <div class="career-company">동서식품</div>
-      <div class="career-role">구매부문 근무 · 입사 초기 5년</div>
+      <div class="career-role">구매업무 담당</div>
     </div>
   </section>
 
