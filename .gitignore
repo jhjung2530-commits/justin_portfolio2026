@@ -11,3 +11,11 @@ Thumbs.db
 
 # Logs
 *.log
+nohup.out
+
+# Node
+node_modules/
+
+# Temp
+tmp/
+*.tmp
